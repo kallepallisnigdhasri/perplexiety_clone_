@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubby - Chatbot UI</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active">
+                        <i data-lucide="search"></i>
+                        <span>Search</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i data-lucide="monitor"></i>
+                        <span>Computer</span>
+                    </a>
+                    <button class="new-thread-btn">
+                        <i data-lucide="plus"></i>
+                        <span>New thread</span>
+                        <kbd>Ctrl K</kbd>
+                    </button>
+                    <div class="nav-group">
+                        <a href="#" class="nav-item">
+                            <i data-lucide="history"></i>
+                            <span>History</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i data-lucide="compass"></i>
+                            <span>Discover</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i data-lucide="layers"></i>
+                            <span>Spaces</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Finance</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i data-lucide="heart"></i>
+                            <span>Health</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i data-lucide="more-horizontal"></i>
+                            <span>More</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="sidebar-bottom">
+                <p class="section-title">Recent History</p>
+                <div id="history-list"></div>
+                <div class="history-empty" id="history-empty-msg">
+                    <p>Recent</p>
+                    <span>Recent and active threads will appear here.</span>
+                </div>
+                <button class="upgrade-btn">
+                    <i data-lucide="arrow-up-circle"></i>
+                    <span>Upgrade plan</span>
+                    <div class="status-dot"></div>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="pro-banner">
+                    <span class="badge">New</span>
+                    <span>Computer is now available on Pro</span>
+                    <a href="#" class="upgrade-link">Upgrade <i data-lucide="arrow-right"></i></a>
+                </div>
+            </header>
+
+            <section class="chat-section">
+                <h1 class="logo">rubby</h1>
+                
+                <div id="chat-history"></div>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <div id="media-preview-container"></div>
+                        <textarea placeholder="Type @ for connectors and sources" rows="1"></textarea>
+                        <input type="file" id="media-upload" accept="image/*, application/pdf" style="display: none;">
+                        <div class="search-footer">
+                            <div class="search-tools-left">
+                                <button class="tool-btn" id="upload-btn"><i data-lucide="plus"></i></button>
+                                <button class="tool-btn action-btn">
+                                    <i data-lucide="monitor"></i>
+                                    <span>Computer</span>
+                                    <i data-lucide="plus" class="small-icon"></i>
+                                </button>
+                            </div>
+                            <div class="search-tools-right">
+                                <button class="model-select">
+                                    <span>Model</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </button>
+                                <button class="tool-btn" id="mic-btn"><i data-lucide="mic"></i></button>
+                                <button class="send-btn"><i data-lucide="audio-lines"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="onboarding-section">
+                    <p class="onboarding-title">Make the most out of Rubby</p>
+                    <div class="onboarding-grid">
+                        <div class="onboarding-card">
+                            <div class="card-icons">
+                                <div class="icon-square red"><i data-lucide="zap"></i></div>
+                                <div class="icon-square green"><i data-lucide="message-square"></i></div>
+                                <div class="icon-square gray"><i data-lucide="circle"></i></div>
+                                <div class="icon-square blue"><i data-lucide="sparkles"></i></div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Select a model</h3>
+                                <p>Explore different AI models to find the perfect match for your questions</p>
+                            </div>
+                            <button class="close-card"><i data-lucide="x"></i></button>
+                        </div>
+
+                        <div class="onboarding-card">
+                            <div class="card-icon-large">
+                                <div class="icon-circle gray"><i data-lucide="monitor"></i></div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Try Computer</h3>
+                                <p>Automate your research with our new agentic workspace</p>
+                            </div>
+                            <button class="close-card"><i data-lucide="x"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
